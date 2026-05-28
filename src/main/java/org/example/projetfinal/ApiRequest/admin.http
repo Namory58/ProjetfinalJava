@@ -1,0 +1,61 @@
+### Test Afficher les users par l'admin
+GET http://localhost:8080/api/admin/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIgMiIsImV4cCI6MTc4MDA0MDMyOX0.qDZI6X3TQsjvwF5E8UiaITxOy5kSn7vU3uotWFyTbBc
+Content-Type: application/json
+
+### Test update user par l'admin
+PUT http://localhost:8080/api/admin/user/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIgMiIsImV4cCI6MTc4MDA0MDMyOX0.qDZI6X3TQsjvwF5E8UiaITxOy5kSn7vU3uotWFyTbBc
+Content-Type: application/json
+
+{
+"id": 1,
+"username": "Toto ",
+"email": "toto@gmail.com",
+"enabled": true,
+"roles": [
+{
+"id": 1,
+"name": "USER"
+}
+]
+}
+### Test create produit  par l'admin
+POST http://localhost:8080/api/admin/produit/create
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIgMiIsImV4cCI6MTc4MDA0MDMyOX0.qDZI6X3TQsjvwF5E8UiaITxOy5kSn7vU3uotWFyTbBc
+Content-Type: application/json
+
+{
+  "name": "Vélo de Route Carbone ",
+  "description": "Cadre en fibre de carbone haute performance pesant seulement 7.5kg. Équipé d'un groupe de transmission 11 vitesses pour une fluidité maximale en montée comme en plat.",
+  "price": 1000,
+  "stockQuantity": 100,
+  "lienImage": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&q=80&w=500",
+  "category": {
+    "id": 5,
+    "name": "Sport"
+  }
+}
+
+### Test create produit  par l'admin
+PATCH http://localhost:8080/api/admin/produit/update/75
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIgMiIsImV4cCI6MTc3ODQ4ODE4NX0.u63kMS4FNWIQAwgvsDwqsyrJAv9oVhdAnRu0Yba0dc0
+Content-Type: application/json
+
+{
+    "category": {
+      "id": 1,
+      "name": "Électronique"
+    },
+    "createdAt": "2026-04-09T21:46:09.760593",
+    "description": "Tire de très belle photo et bon pour les voyages",
+    "id": 75,
+    "lienImage": "https://m.media-amazon.com/images/I/61X5FknDWuL._AC_SX679_.jpg",
+    "name": "iphone 17 ",
+    "price": 969,
+    "stockQuantity": 10
+  }
+
+### Test create produit  par l'admin
+DELETE http://localhost:8080/api/admin/produit/delete/75
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIgMiIsImV4cCI6MTc3ODQ4ODE4NX0.u63kMS4FNWIQAwgvsDwqsyrJAv9oVhdAnRu0Yba0dc0

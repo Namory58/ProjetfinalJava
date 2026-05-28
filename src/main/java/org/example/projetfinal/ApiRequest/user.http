@@ -1,0 +1,9 @@
+GET http://localhost:8080/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIgMSIsImV4cCI6MTc3ODQyOTE1MX0.F41Kr1rSef-f8mkIsFjHZ7YSrFuKOgVUCSAvxZSWIok
+Content-Type: application/json
+
+### Test update user par l'admin
+GET http://localhost:8080/api/categories
+
+### Test récuperations de 1 users By id
+GET http://localhost:8080/api/users/1

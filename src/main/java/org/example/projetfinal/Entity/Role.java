@@ -1,4 +1,33 @@
 package org.example.projetfinal.Entity;
 
-public class Role {
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import lombok.Data;
+import org.springframework.security.core.GrantedAuthority;
+
+@Entity
+@Data
+public class Role  implements GrantedAuthority {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    /**
+     * nom de lu role
+     */
+    private String name;
+
+    /**
+     * Returns the authority of this Role.
+     * @return the authority of this Role
+     */
+    @Override
+    public String getAuthority() {
+        return this.name;
+    }
+
 }

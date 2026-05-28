@@ -1,0 +1,49 @@
+### Test Inscription valide
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "Tata",
+  "email": "tatay@gmail.com",
+  "password": "MotDePasseTresLong123!"
+}
+
+### Test Inscription invalide
+POST http://localhost:8080/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "testeur_01",
+  "email": "testeur@gmail.com",
+  "password": "MotDePas"
+}
+### Test connexion
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+"email": "tatay@gmail.com",
+"password": "MotDePasseTresLong123!"
+}
+
+### Test Mot de passe incorrect
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+"email": "testeur@gmail.com",
+"password": "Mot"
+}
+
+
+### Test Mot de passe incorrect
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "mely@gmail.com",
+  "password": "MotDePasseTresLong123!"
+}
+
+
+

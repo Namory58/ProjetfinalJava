@@ -1,0 +1,11 @@
+### Test All produit sans parginations
+GET http://localhost:8080/api/products
+
+### Test All produit avec parginations
+GET http://localhost:8080/api/products?page=2&size=10
+
+### Test All produit id
+GET http://localhost:8080/api/products/75
+
+### Test All produit id
+GET http://localhost:8080/api/products/search?category=Électronique
